@@ -4,9 +4,7 @@ import { render } from '@testing-library/react';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
-  const { getNodeText } = render(<App />);
-
-    function getNodeText(node) {
+  const { getNodeText(node) } = render(<App />) {
       if (node.matches('input[type=submit], input[type=button]')) {
         return node.value
       }
