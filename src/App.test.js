@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
-  getNodeText(node: HTMLElement)
+  getNodeText(node: {HTMLElement})
   const getBytext = getNodeText(container.querySelector('div'))                      
   const linkElement = getNodeText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
