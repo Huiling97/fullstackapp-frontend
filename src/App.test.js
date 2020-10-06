@@ -16,7 +16,6 @@ const TEXT_NODE = 3
       .map(c => c.textContent)
       .join('')
   }
-  export {getNodeText}
   
   const { getNodeText } = render(<App />);
   const linkElement = getNodeText(/learn react/i);
