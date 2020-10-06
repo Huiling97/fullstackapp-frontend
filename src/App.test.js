@@ -4,6 +4,7 @@ import { render } from '@testing-library/react';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
+  const { getNodeText } = render(<App />);
   
 const TEXT_NODE = 3
 
@@ -17,7 +18,6 @@ const TEXT_NODE = 3
       .join('')
   }
   
-  const { getNodeText } = render(<App />);
   const linkElement = getNodeText(/learn react/i);
   expect(linkElement).toBeInTheDocument(); 
 });
