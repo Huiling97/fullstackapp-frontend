@@ -1,14 +1,14 @@
 import React from 'react';
 import Chai from 'chai-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Jest from '@testing-library/jest-dom';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
   
-   const { nodeHasText } = render(<App />);
+   const { getByText } = render(<App />);
                                   
-      nodeHasText((content, node) => {
+      screen.getByText((content, node) => {
       const hasText = (node) => node.textContent === "Welcome to FintechSG React Course";
       const nodeHasText = hasText(node);
       const childrenDontHaveText = Array.from(node.children).every(
@@ -19,6 +19,6 @@ test('renders learn react link', () => {
     });
   
  
-  const linkElement = nodeHasText(/learn react/i);
+  const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument(); 
 });
