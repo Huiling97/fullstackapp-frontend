@@ -19,6 +19,6 @@ test('renders learn react link', () => {
     });
   
  
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText("Welcome to FintechSG React Course");
   expect(linkElement).toBeInTheDocument(); 
 });
