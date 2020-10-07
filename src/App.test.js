@@ -1,19 +1,22 @@
 import React from 'react';
 import Chai from 'chai-dom';
 import { render } from '@testing-library/react';
+import 'jest-dom/extend-expect';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
-  function getNodeText(node)  = render(<App />) {
-      if (node.matches('input[type=submit], input[type=button]')) {
-        return node.value
-      }
-      return Array.from(node.childNodes)
-        .filter(child => child.nodeType === TEXT_NODE && Boolean(child.textContent))
-        .map(c => c.textContent)
-        .join('')
-    }
   
-  const linkElement = getNodeText(/learn react/i);
+    screen.getByText((content, node) => {
+      const hasText = (node) => node.textContent === "Welcome to FintechSG React Course";
+      const nodeHasText = hasText(node);
+      const childrenDontHaveText = Array.from(node.children).every(
+        (child) => !hasText(child)
+      );
+
+      return nodeHasText && childrenDontHaveText;
+    });
+  
+  const { nodeHasText } = render(<App />);
+  const linkElement = nodeHasText(/learn react/i);
   expect(linkElement).toBeInTheDocument(); 
 });
