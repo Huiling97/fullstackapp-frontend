@@ -1,6 +1,7 @@
 import React from 'react';
 import Chai from 'chai-dom';
-import { render } from '@testing-library/react', '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
+import Jest from '@testing-library/jest-dom';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
