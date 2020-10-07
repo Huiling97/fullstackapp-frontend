@@ -6,6 +6,8 @@ import App from './App'; // imports app file
 
 test('renders learn react link', () => {
   
+   const { getByText } = render(<App />);
+                                  
       getByText((content, node) => {
       const hasText = (node) => node.textContent === "Welcome to FintechSG React Course";
       const nodeHasText = hasText(node);
@@ -16,7 +18,7 @@ test('renders learn react link', () => {
       return nodeHasText && childrenDontHaveText;
     });
   
-  const { nodeHasText } = render(<App />);
+ 
   const linkElement = nodeHasText(/learn react/i);
   expect(linkElement).toBeInTheDocument(); 
 });
