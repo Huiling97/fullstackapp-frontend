@@ -6,9 +6,9 @@ import App from './App'; // imports app file
 
 test('renders learn react link', () => {
   
-   const { getByText } = render(<App />);
+   const { nodeHasText } = render(<App />);
                                   
-      getByText((content, node) => {
+      nodeHasText((content, node) => {
       const hasText = (node) => node.textContent === "Welcome to FintechSG React Course";
       const nodeHasText = hasText(node);
       const childrenDontHaveText = Array.from(node.children).every(
