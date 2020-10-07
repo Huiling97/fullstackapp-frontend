@@ -1,7 +1,7 @@
 import React from 'react';
 import Chai from 'chai-dom';
 import { render } from '@testing-library/react';
-import 'jest-dom/extend-expect';
+import { render } from '@testing-library/jest-dom';
 import App from './App'; // imports app file
 
 test('renders learn react link', () => {
